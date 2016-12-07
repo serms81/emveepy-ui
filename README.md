@@ -1,11 +1,14 @@
 # Emveepy UI
 
 ## The goal
+
 To build a forum based on **Most Valuable Professionals** experience on developing **Minimum Viable Products** -or Services-, sharing their wisdom with people like you, young entrepreneur, and your startup  team.
 
 ## The project
 
-### Stack
+This project will only include the user interface.
+
+### The stack
 
 At first, I am willing to pack everything, so...
 
