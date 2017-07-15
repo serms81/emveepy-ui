@@ -1,0 +1,17 @@
+
+$color_main: #ff0000;
+
+$color_darkest: darken($color_main,35%);
+$color_darker: darken($color_main,25%);
+$color_dark: darken($color_main,15%);
+$color_light: lighten($color_main,15%);
+$color_lighter: lighten($color_main,25%);
+$color_lightest: lighten($color_main,35%);
+
+.theme--gray-scale {
+  .btn {
+    border-color: $color_dark;
+    background-color: $color_main;
+    color:  $color_lightest;
+  }
+}

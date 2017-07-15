@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+// ----------------------
+// == Site settings
+// ----------------------
+
+// Fonts
+$font1: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font2: Georgia, serif;
+
+// = Colors
+// -----------------------------
+
+$color_main: #3333ff;
+
+$color_darkest: darken($color_main,45%);
+$color_darker: darken($color_main,30%);
+$color_dark: darken($color_main,15%);
+$color_light: lighten($color_main,15%);
+$color_lighter: lighten($color_main,30%);
+$color_lightest: lighten($color_main,45%);
+
+// Brand colors
+$facebook: #3b5998;
+$twitter:  #43bfe1;
+
+// = Grid
+// -----------------------------
+
+// Max width wrapper
+$wrapper-width: pxtoem(1140, 16);
