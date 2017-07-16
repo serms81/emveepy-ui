@@ -1,4 +1,4 @@
-export class Point {
+class Point {
     constructor(x, y) {
         this.x = x;
         this.y = y;
@@ -6,4 +6,6 @@ export class Point {
     toString() {
         return '(' + this.x + ', ' + this.y + ')';
     }
-}
+};
+
+export default Point;
