@@ -4,9 +4,9 @@
   "description": "Emveepy User Interface",
   "main": "index.js",
   "scripts": {
-    "build": "./node_modules/webpack/bin/webpack.js",
+    "build": "set NODE_ENV=production&&webpack -pd",
     "watch": "./node_modules/webpack/bin/webpack.js --watch",
-    "serve": "./node_modules/.bin/webpack-dev-server --history-api-fallback --content-base ./dist/ --inline --progress"
+    "serve": "webpack-dev-server --devtool source-maps --hot --progress --colors --content-base ."
   },
   "repository": {
     "type": "git",

@@ -1,19 +1,25 @@
-var webpack = require('webpack')
-var ExtractTextPlugin = require('extract-text-webpack-plugin')
+var webpack = require('webpack'),
+    path = require('path'),
+    ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 var config = {
-  context: __dirname + '/src',
+  context: path.resolve(__dirname, 'src'),
   entry: './main.js',
   output: {
-    path: __dirname + '/dist/assets/',
+    path: path.resolve(__dirname, 'dist'),
     publicPath: '/assets/',
     filename: 'scripts.js'
   },
   module: {
     loaders: [
       { test: /\.js$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/
+        include: path.join(__dirname, 'src'),
+        loader: 'babel-loader'
+      },
+      {
+        test: /\.scss$/,
+        include: path.join(__dirname, 'src'),
+        loader: ExtractTextPlugin.extract('style', 'css!sass')
       }
     ]
   },
@@ -23,23 +29,24 @@ var config = {
       compress: {
         warnings: true
       }
-    })
+    }),
+    new ExtractTextPlugin('styles.css')
   ]
 }
 
-if (true) {
-  // If you want to extract to a file:
-  config.module.loaders.push(
-    { test: /\.scss$/, loader: ExtractTextPlugin.extract('style', 'css!sass') }
-  )
-  config.plugins.push(
-    new ExtractTextPlugin('styles.css')
-  )
-} else {
-  // If you want to include styles on main file
-  config.module.loaders.push(
-    { test: /\.scss$/, loader: 'style!css!sass' }
-  )
-}
+// if (false) {
+//   // If you want to extract to a file:
+//   config.module.loaders.push(
+//     { test: /\.scss$/, loader: ExtractTextPlugin.extract('style', 'css!sass') }
+//   )
+//   config.plugins.push(
+//     new ExtractTextPlugin('styles.css')
+//   )
+// } else if (false) {
+//   // If you want to include styles on main file
+//   config.module.loaders.push(
+//     { test: /\.scss$/, loader: 'style!css!sass' }
+//   )
+// }
 
 module.exports = config
