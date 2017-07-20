@@ -1,6 +1,8 @@
 var webpack = require('webpack'),
     path = require('path'),
-    ExtractTextPlugin = require('extract-text-webpack-plugin')
+    ExtractTextPlugin = require('extract-text-webpack-plugin');
+const marked = require("marked"),
+      renderer = new marked.Renderer();
 
 var config = {
   context: path.resolve(__dirname, 'src'),
@@ -21,7 +23,22 @@ var config = {
         include: path.join(__dirname, 'src'),
         loader: ExtractTextPlugin.extract('style', 'css!sass')
       }
-    ]
+    ],
+    rules: [{
+      test: /\.md$/,
+      use: [
+        {
+          loader: "html-loader"
+        },
+        {
+          loader: "markdown-loader",
+          options: {
+            pedantic: true,
+            renderer
+          }
+        }
+      ]
+    }]
   },
   plugins: [
     new webpack.optimize.UglifyJsPlugin({
