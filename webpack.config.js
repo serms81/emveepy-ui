@@ -1,10 +1,8 @@
 var webpack = require('webpack'),
     path = require('path'),
     ExtractTextPlugin = require('extract-text-webpack-plugin');
-const marked = require("marked"),
-      renderer = new marked.Renderer();
 
-var config = {
+module.exports = {
   context: path.resolve(__dirname, 'src'),
   entry: './main.js',
   output: {
@@ -14,6 +12,13 @@ var config = {
   },
   module: {
     loaders: [
+      { test: /\.hbs$/,
+        include: path.join(__dirname, 'src'),
+        loader: 'handlebars-loader',
+        options: {
+          helperDirs: path.join(process.cwd(), "./js/helpers")
+        }
+      },
       { test: /\.js$/,
         include: path.join(__dirname, 'src'),
         loader: 'babel-loader'
@@ -23,22 +28,7 @@ var config = {
         include: path.join(__dirname, 'src'),
         loader: ExtractTextPlugin.extract('style', 'css!sass')
       }
-    ],
-    rules: [{
-      test: /\.md$/,
-      use: [
-        {
-          loader: "html-loader"
-        },
-        {
-          loader: "markdown-loader",
-          options: {
-            pedantic: true,
-            renderer
-          }
-        }
-      ]
-    }]
+    ]
   },
   plugins: [
     new webpack.optimize.UglifyJsPlugin({
@@ -50,20 +40,3 @@ var config = {
     new ExtractTextPlugin('styles.css')
   ]
 }
-
-// if (false) {
-//   // If you want to extract to a file:
-//   config.module.loaders.push(
-//     { test: /\.scss$/, loader: ExtractTextPlugin.extract('style', 'css!sass') }
-//   )
-//   config.plugins.push(
-//     new ExtractTextPlugin('styles.css')
-//   )
-// } else if (false) {
-//   // If you want to include styles on main file
-//   config.module.loaders.push(
-//     { test: /\.scss$/, loader: 'style!css!sass' }
-//   )
-// }
-
-module.exports = config
