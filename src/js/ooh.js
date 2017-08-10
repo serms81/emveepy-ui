@@ -1,4 +1,4 @@
-import ColorPoint from './color-point.js';
+import ColorPoint from './color-point.js'
 
 window.Ooh = {
   init: () => {
@@ -7,7 +7,7 @@ window.Ooh = {
     console.log (cp.toString());
   },
   alert: () => {
-    alert();
+    alert()
   },
   zoomImg: (target) => {
     target.parentElement.style.cursor = 'zoom-in';
