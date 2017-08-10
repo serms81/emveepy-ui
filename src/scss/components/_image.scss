@@ -1,0 +1,40 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the image component.
+// -----------------------------------------------------------------------------
+
+$img-wrapper-width: 100px;
+$img-border-color: #fff;
+$img-shadow-color: darken($img-border-color,33%);
+
+.img-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: $img-wrapper-width;
+  height: $img-wrapper-width;
+  border: 5px solid $img-border-color;
+  box-shadow: 0 0 10px $img-shadow-color;
+
+  img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    min-width: 100%;
+    max-width: $img-wrapper-width;
+  }
+}
+
+.img-wrapper--x2 {
+  @extend .img-wrapper;
+  width: $img-wrapper-width*2;
+  height: $img-wrapper-width*2;
+
+  img {
+    max-width: $img-wrapper-width*2;
+  }
+}
+
+.img-wrapper--circle {
+  @extend .img-wrapper;
+  border-radius: 50%;
+}
