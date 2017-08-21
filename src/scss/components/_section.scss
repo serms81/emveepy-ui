@@ -1,0 +1,19 @@
+%section,
+.section,
+section {
+  padding: $gutter;
+}
+
+.main-container {
+  @include respond-to(large) {
+    max-width: 1020px;
+  }
+
+  @include respond-to(medium) {
+    max-width: 660px;
+  }
+
+  @include respond-to(small) {
+    max-width: 300px;
+  }
+}

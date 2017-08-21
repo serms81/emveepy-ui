@@ -4,16 +4,16 @@
 // -----------------------------------------------------------------------------
 
 $button-color-border: transparent;
-$button-color-bg: $brand-color;
+$button-color-bg: invert($brand-color);
 $button-color-text: $text-color;
 
-%theme-default,
-.theme-default {
-  background-color: $bg-color;
-  color: $text-color;
+%theme-dark,
+.theme-dark {
+  background-color: $text-color;
+  color: $bg-color;
 
   a {
-    color: $button-color-bg;
+    color: invert($brand-color);
   }
 
   %button {
@@ -28,6 +28,5 @@ $button-color-text: $text-color;
 
   %nav-bar {
     background-color: $button-color-bg;
-    border-color: $text-color;
   }
 }

@@ -1,3 +1,22 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the button component.
 // -----------------------------------------------------------------------------
+
+%button {
+  display: inline-block;
+  box-sizing: border-box;
+  outline: none;
+  border: 2px solid;
+  padding: .33em .66em;
+  font-size: inherit;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+input[type="button"],
+input[type="submit"],
+.button,
+button {
+  @extend %button;
+}

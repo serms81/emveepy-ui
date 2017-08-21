@@ -1,0 +1,11 @@
+%grid,
+.grid {
+  display: grid;
+}
+
+@each $number in $grid-column-count {
+  %grid-with-#{$number}-columns,
+  .grid-with-#{$number}-columns {
+    grid: repeat(auto-fill, auto) / repeat(#{$number}, auto);
+  }
+}

@@ -1,0 +1,32 @@
+%copy-text {
+  font-family: serif;
+  font-size: 1rem;
+}
+
+%article-header {
+  @extend %h2;
+}
+
+%article-main {
+  @extend %copy-text;
+}
+
+%article-footer {
+  @extend %small;
+}
+
+%article,
+.article,
+article {
+  header {
+    @extend %article-header;
+  }
+
+  main {
+    @extend %article-main;
+  }
+
+  footer {
+    @extend %article-footer;
+  }
+}

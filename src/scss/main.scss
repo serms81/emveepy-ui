@@ -33,7 +33,11 @@
 // 5. Components
 @import
   'components/button',
-  'components/image';
+  'components/image',
+  'components/navbar',
+  'components/grid',
+  'components/article',
+  'components/section';
   // 'components/caroussel';
   // 'components/cover';
   // 'components/dropdown';
@@ -47,5 +51,6 @@
 
 // 7. Themes
 @import
-  'themes/default';
+  'themes/default',
+  'themes/dark';
   // 'themes/admin';

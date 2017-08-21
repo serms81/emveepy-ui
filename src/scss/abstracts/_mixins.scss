@@ -24,10 +24,17 @@
 }
 
 /// Make a context based selector a little more friendly
-/// @author Hugo Giraudel
 /// @param {String} $context
 @mixin when-inside($context) {
   #{$context} & {
     @content;
   }
+}
+
+/// Set width and height properties
+/// @param {Length} $width [1px]
+/// @param {Length} $height [$width]
+@mixin wh($width: 1px, $height: $width) {
+  width: $width;
+  height: $height;
 }

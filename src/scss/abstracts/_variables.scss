@@ -2,9 +2,11 @@
 // This file contains all application-wide Sass variables.
 // -----------------------------------------------------------------------------
 
-
-
-
+/// Relative or absolute URL where all assets are served from
+/// @type String
+/// @example scss - When using a CDN
+///   $base-url: 'http://cdn.example.com/assets/';
+$base-url: '/assets/' !default;
 
 /// Regular font family
 /// @type List
@@ -14,13 +16,13 @@ $text-font-stack: 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvet
 /// @type List
 $code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace !default;
 
-
-
-
-
 /// Copy text color
 /// @type Color
 $text-color: rgb(34, 34, 34) !default;
+
+/// Background  color
+/// @type Color
+$bg-color: rgb(221, 221, 221) !default;
 
 /// Main brand color
 /// @type Color
@@ -38,30 +40,23 @@ $mid-grey: rgb(153, 153, 153) !default;
 /// @type Color
 $dark-grey: rgb(68, 68, 68) !default;
 
-
-
-
+/// Base font size
+/// @type Length
+$font-size-base: 16px !default;
 
 /// Container's maximum width
 /// @type Length
-$max-width: 1180px !default;
-
-
-
-
+$max-width:  1280px !default;
+$gutter: 1rem;
 
 /// Breakpoints map
 /// @prop {String} keys - Keys are identifiers mapped to a given length
 /// @prop {Map} values - Values are actual breakpoints expressed in pixels
 $breakpoints: (
-  'small': 360px,
-  'medium': 720px,
-  'large': 1080px,
+  'small'  : (max-width:  360px),
+  'medium' : (max-width:  720px),
+  'large'  : (max-width: 1080px),
 ) !default;
-
-
-
-
 
 /// Z-indexes map, gathering all Z layers of the application
 /// @access private
@@ -69,19 +64,16 @@ $breakpoints: (
 /// @prop {String} key - Layer’s name
 /// @prop {Number} value - Z value mapped to the key
 $z-indexes: (
-  'modal': 5000,
-  'dropdown': 4000,
-  'default': 1,
-  'below': -1,
+  'modal'    : 5000,
+  'navbar'   : 4000,
+  'dropdown' : 3000,
+  'default'  :    1,
+  'below'    :   -1,
 ) !default;
 
-
-
-
-
-
-/// Relative or absolute URL where all assets are served from
-/// @type String
-/// @example scss - When using a CDN
-///   $base-url: 'http://cdn.example.com/assets/';
-$base-url: '/assets/' !default;
+$grid-column-count: (
+  2,
+  3,
+  4,
+  5
+);
