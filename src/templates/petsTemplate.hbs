@@ -1,7 +1,7 @@
 {{#each pets}}
   <div class="pet">
-    <div class="photo-column">
-      <img src="{{photo}}">
+    <div class="photo-column img-wrapper--circle">
+      <img src="{{photo}}" zoomable="{{photo}}" onload="zoomImg(this)">
     </div>
 
     <div class="info-column">

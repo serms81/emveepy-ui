@@ -29,4 +29,8 @@ $button-color-text: $text-color;
   %nav-bar {
     background-color: $button-color-bg;
   }
+
+  .img-zoomed-wrapper {
+    background: rgba(0,0,0,.5);
+  }
 }
