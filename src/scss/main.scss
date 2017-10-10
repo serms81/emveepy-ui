@@ -10,7 +10,8 @@
 
 // 2. Vendors
 @import
-  'vendor/normalize';
+  // 'vendor/normalize'; // Replaced with vendor Sanitize
+  'vendor/sanitize';
 
 // 3. Base stuff
 @import
@@ -23,7 +24,7 @@
 
 // 4. Layout-related sections
 @import
-  // 'layout/navigation',
+  'layout/navigation',
   // 'layout/grid',
   'layout/header',
   'layout/footer';
@@ -34,9 +35,9 @@
 @import
   'components/button',
   'components/image',
-  'components/navbar',
   'components/grid',
   'components/article',
+  'components/pet',
   'components/section';
   // 'components/caroussel';
   // 'components/cover';

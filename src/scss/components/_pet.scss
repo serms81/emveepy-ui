@@ -1,0 +1,23 @@
+.pet {
+  display: flex;
+  flex-direction: row;
+  flex-flow: nowrap;
+
+  > * {
+    flex-grow: 1;
+  }
+
+  .photo-column {
+    flex-basis: 200px;
+  }
+
+  .info-column {
+    flex-basis: 400px;
+  }
+
+  &-list & {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid $mid-grey;
+    margin-bottom: 1rem;
+  }
+}

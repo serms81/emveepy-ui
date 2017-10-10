@@ -1,11 +1,13 @@
 {{#each pets}}
   <div class="pet">
-    <div class="photo-column img-wrapper--circle">
-      <img src="{{photo}}" zoomable="{{photo}}" onload="zoomImg(this)">
+    <div class="photo-column">
+      <div class="img-wrapper--circle">
+        <img src="{{photo}}" zoomable="{{photo}}" onload="zoomImg(this)">
+      </div>
     </div>
 
     <div class="info-column">
-      <h2>{{name}} <span class="species">({{species}})</span></h2>
+      <div class="h2">{{name}} <small class="species">{{species}}</small></div>
 
       <p>Age: {{birthYear}}</p>
 
