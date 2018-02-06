@@ -6,8 +6,8 @@
 /// @author Harry Roberts
 /// @param {Bool} $self [false] - Whether or not to include current selector
 /// @link https://twitter.com/csswizardry/status/478938530342006784 Original tweet from Harry Roberts
-@mixin on-event($self: false) {
-  @if $self {
+@mixin on-event($include-self: false) {
+  @if $include-self {
     &,
     &:hover,
     &:active,
@@ -37,4 +37,13 @@
 @mixin wh($width: 1px, $height: $width) {
   width: $width;
   height: $height;
+}
+
+@mixin squared($size: 1px) {
+  @include wh($size);
+}
+
+@mixin rounded($size: 1px) {
+  @include wh($size);
+  border-radius: 50%;
 }

@@ -2,41 +2,33 @@
 // This file contains all styles related to the image component.
 // -----------------------------------------------------------------------------
 
-$img-wrapper-width: $font-size-base * 10;
-$img-border-width: $font-size-base / 4;
-$img-border-color: $light-grey;
-$img-shadow-color: darken($img-border-color,33%);
+$img-wrapper-size: $font-size-base * 10;
+$img-border: ($font-size-base / 4) solid $dark-grey;
 
 img {
   max-width: 100%;
 }
 
 .img-wrapper {
+  @include squared($img-wrapper-size);
   position: relative;
   overflow: hidden;
-  width: $img-wrapper-width;
-  height: $img-wrapper-width;
-  border: $img-border-width solid $img-border-color;
-  box-shadow: 0 0 10px $img-shadow-color;
+  border: $img-border;
+  // box-shadow: 0 0 10px $img-shadow-color;
 
   img {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
+    @extend %absolute-middle;
     min-width: 100%;
-    height: 100%;
     max-width: none;
+    height: 100%;
   }
 }
 
 .img-wrapper--x2 {
-  @extend .img-wrapper;
-  width: $img-wrapper-width * 2;
-  height: $img-wrapper-width * 2;
+  @include squared($img-wrapper-size * 2);
 
   img {
-    max-width: $img-wrapper-width * 2;
+    max-width: $img-wrapper-size * 2;
   }
 }
 
@@ -46,24 +38,11 @@ img {
 }
 
 .img-zoomed {
+  @extend %modal-box;
   cursor : zoom-out;
-  position : fixed;
-  z-index : 999999999;
-  top : 50%;
-  left : 50%;
-  transform : translate(-50%,-50%);
-  max-width : calc(100vw - 20px);
-  max-height : calc(100vh - 20px);
-  box-shadow: 0 0 20px $img-shadow-color;
 
   &-wrapper {
+    @extend %modal-layer;
     cursor : zoom-out;
-    position: fixed;
-    z-index: 999999998;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(255,255,255,.5);
   }
 }

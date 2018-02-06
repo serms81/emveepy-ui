@@ -5,8 +5,8 @@
   'abstracts/variables',
   'abstracts/breakpoints',
   'abstracts/functions',
-  'abstracts/mixins';
-  // 'abstracts/placeholders';
+  'abstracts/mixins',
+  'abstracts/placeholders';
 
 // 2. Vendors
 @import
@@ -19,7 +19,7 @@
   'base/base',
   'base/fonts',
   'base/typography',
-  'base/helpers';
+  'base/helpers/index';
   // 'base/animations';
 
 // 4. Layout-related sections
