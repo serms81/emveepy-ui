@@ -50,7 +50,16 @@
             <h3>Links</h3>
           </header>
           <hr>
+
+          <pre>
+a {
+  text-decoration: underline;
+  cursor: pointer;
+}</pre>
+
           <a class="link">This is an anchor</a>
+          <pre><code>&lt;a class="link"&gt;This is an anchor&lt;/a&gt;</code></pre>
+
         </div>
       </section>
       <section class="container content-center-on-viewport" id="buttons" title="Buttons">
@@ -60,11 +69,41 @@
             <h3>Buttons</h3>
           </header>
           <hr>
+
+          <pre>
+%button {
+  display: inline-block;
+  box-sizing: border-box;
+  outline: none;
+  border: 2px solid;
+  padding: .33em .66em;
+  font-size: inherit;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+input[type="button"],
+input[type="submit"],
+.button,
+button {
+  @extend %button;
+}</pre>
+
           <span class="button">This is a span</span>
+          <pre><code>&lt;span class="button"&gt;This is a span&lt;/span&gt;</code></pre>
+
           <a class="button">This is an anchor</a>
+          <pre><code>&lt;a class="button"&gt;This is an anchor&lt;/a&gt;</code></pre>
+
           <button>This is a button</button>
+          <pre><code>&lt;button&gt;This is a button&lt;/button&gt;</code></pre>
+
           <input type="button" value="This is a button type input">
+          <pre><code>&lt;input type="button" value="This is a button type input"&gt;</code></pre>
+
           <input type="submit" value="This is a submit type input">
+          <pre><code>&lt;input type="submit" value="This is a submit type input"&gt;</code></pre>
         </div>
       </section>
       <section class="container content-center-on-viewport" id="articles" title="Articles">

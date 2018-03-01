@@ -1,0 +1,21 @@
+hr + pre,
+pre code {
+  padding: .4rem;
+  background: $dark-grey;
+  color: $light-grey;
+  font-size: .8rem;
+}
+
+hr + pre {
+  overflow: auto;
+  max-height: 200px;
+}
+
+pre {
+  margin-bottom: 3rem;
+}
+
+code + textarea {
+  display: block;
+  width: 100%;
+}
