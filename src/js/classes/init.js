@@ -1,8 +1,7 @@
 import Ooh from './ooh.js'
-var MenuSpy = require('menuspy')
+// var MenuSpy = require('menuspy')
 
 class Init {
-
   constructor () {
     this.title1 = 'ES6 + webpack'
     this.title2 = 'is working!'
@@ -44,16 +43,17 @@ class Init {
       anchor.appendChild(li)
       list.appendChild(anchor)
     })
-    var ms = new MenuSpy(
-      list,
-      {
-        menuItemSelector: '.nav-bar-link',
-        activeClass: 'nav-bar-link--active',
-        threshold: 15,
-        hashTimeout: 600,
-        callback: () => { console.log(ms) }
-      }
-    )
+
+    // var ms = new MenuSpy(
+    //   list,
+    //   {
+    //     menuItemSelector: '.nav-bar-link',
+    //     activeClass: 'nav-bar-link--active',
+    //     threshold: 15,
+    //     hashTimeout: 600,
+    //     callback: () => { console.log(ms) }
+    //   }
+    // )
   }
 }
 
