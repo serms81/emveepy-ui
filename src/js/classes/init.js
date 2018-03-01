@@ -44,6 +44,30 @@ class Init {
       list.appendChild(anchor)
     })
 
+    document.querySelectorAll('pre').forEach((el)=>{
+      el.title = 'Double click to copy this code.'
+      el.style.cursor = 'copy'
+      el.addEventListener('dblclick', (ev) => {
+        var copyTextarea = document.createElement('textarea')
+        copyTextarea.style.width = '1px'
+        copyTextarea.style.height = '1px'
+        copyTextarea.value = el.textContent
+        copyTextarea.setAttribute('readonly', 'true')
+        el.parentElement.appendChild(copyTextarea)
+        copyTextarea.select()
+
+        try {
+          var successful = document.execCommand('copy')
+          var msg = successful ? 'successful' : 'unsuccessful'
+          console.log('Copying text command was ' + msg)
+        } catch (err) {
+          console.log('Oops, unable to copy')
+        }
+
+        copyTextarea.parentElement.removeChild(copyTextarea)
+      })
+    })
+
     // var ms = new MenuSpy(
     //   list,
     //   {
