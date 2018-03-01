@@ -34,7 +34,7 @@
     "handlebars": "^4.0.10",
     "handlebars-loader": "^1.5.0",
     "markdown-loader": "^2.0.1",
-    "node-sass": "^3.13.0",
+    "node-sass": "^3.13.1",
     "path": "^0.12.7",
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
