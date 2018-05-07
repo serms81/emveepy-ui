@@ -1,0 +1,21 @@
+%modal-layer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: z(modal);
+  width: 100vw;
+  height: 100vh;
+  background-color: $light-grey;
+}
+
+%modal-box {
+  max-width : calc(100vw - $gutter);
+  max-height : calc(100vh - $gutter);
+  box-shadow: 0 0 $gutter rgba($dark-grey, 0.5);
+}

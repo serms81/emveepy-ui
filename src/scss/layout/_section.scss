@@ -3,12 +3,9 @@
 }
 
 %content-center-on-viewport {
-  @extend %full-viewport-height;
-  @extend %flex-column-center-center;
   min-height: 100vh;
 
   %section-inner {
-    @extend %full-viewport-width;
     max-width: 600px;
     padding-top: 5vh;
     padding-bottom: 5vh;

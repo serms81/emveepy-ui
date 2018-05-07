@@ -3,31 +3,10 @@
 // default one.
 // -----------------------------------------------------------------------------
 
-$button-color-border: transparent;
-$button-color-bg: $brand-color;
-$button-color-text: $text-color;
+%theme-default {
+  background: lightgrey;
+}
 
-%theme-default,
 .theme-default {
-  background-color: $bg-color;
-  color: $text-color;
-
-  a {
-    color: $button-color-bg;
-  }
-
-  %button {
-    border-color: $button-color-border;
-    background-color: $button-color-bg;
-    color: $button-color-text;
-
-    @include on-event {
-      border-color: darken($button-color-bg, 20%);
-    }
-  }
-
-  %nav-bar {
-    background-color: $button-color-bg;
-    border-color: $text-color;
-  }
+  @extend %theme-default;
 }

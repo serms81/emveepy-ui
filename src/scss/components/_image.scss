@@ -5,36 +5,46 @@
 $img-wrapper-size: $font-size-base * 10;
 $img-border: ($font-size-base / 4) solid $dark-grey;
 
-img {
-  max-width: 100%;
-}
-
-.img-wrapper {
+%image-wrapper {
   @include squared($img-wrapper-size);
   position: relative;
   overflow: hidden;
   border: $img-border;
-  // box-shadow: 0 0 10px $img-shadow-color;
 
-  img {
+  &--x2 {
+    @include squared($img-wrapper-size * 2);
+  }
+
+  &--circle {
+    border-radius: 50%;
+  }
+}
+
+img {
+  max-width: 100%;
+
+  %image-wrapper & {
     @extend %absolute-middle;
     min-width: 100%;
     max-width: none;
     height: 100%;
   }
-}
 
-.img-wrapper--x2 {
-  @include squared($img-wrapper-size * 2);
-
-  img {
+  %img-wrapper--x2 & {
     max-width: $img-wrapper-size * 2;
   }
 }
 
-.img-wrapper--circle {
-  @extend .img-wrapper;
-  border-radius: 50%;
+.img-wrapper {
+  @extend %image-wrapper;
+
+  &--x2 {
+    @extend %image-wrapper--x2;
+  }
+
+  &--circle {
+    @extend %image-wrapper--circle;
+  }
 }
 
 .img-zoomed {

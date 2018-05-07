@@ -8,7 +8,7 @@
 ///   $base-url: 'http://cdn.example.com/assets/';
 $base-url: '/assets/' !default;
 
-/// Regular font familyr
+/// Regular font family
 /// @type List
 $text-font-stack: 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
 
@@ -57,9 +57,13 @@ $gutter: 1rem;
 /// @prop {String} keys - Keys are identifiers mapped to a given length
 /// @prop {Map} values - Values are actual breakpoints expressed in pixels
 $breakpoints: (
-  'small'  : (max-width:  360px),
-  'medium' : (max-width:  720px),
-  'large'  : (max-width: 1080px),
+  'smallest': (max-width:  480px),
+  'smaller' : (max-width:  640px),
+  'small'   : (max-width:  800px),
+  'medium'  : (max-width:  960px),
+  'large'   : (max-width: 1120px),
+  'larger'  : (max-width: 1280px),
+  'largest' : (min-width: 1281px),
 ) !default;
 
 /// Z-indexes map, gathering all Z layers of the application
@@ -68,16 +72,19 @@ $breakpoints: (
 /// @prop {String} key - Layer’s name
 /// @prop {Number} value - Z value mapped to the key
 $z-indexes: (
-  'modal'    : 5000,
-  'navbar'   : 4000,
-  'dropdown' : 3000,
-  'default'  :    1,
-  'below'    :   -1,
+  'toast'       : 7000,
+  'modal'       : 6000,
+  'fixed-stack' : 5000,
+  'navbar'      : 4000,
+  'dropdown'    : 3000,
+  'default'     :    1,
+  'below'       :   -1,
 ) !default;
 
 $grid-column-count: (
   2,
   3,
   4,
-  5
+  5,
+  6
 );

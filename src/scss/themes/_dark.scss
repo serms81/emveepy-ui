@@ -3,34 +3,10 @@
 // default one.
 // -----------------------------------------------------------------------------
 
-$button-color-border: transparent;
-$button-color-bg: invert($brand-color);
-$button-color-text: $text-color;
+%theme-dark {
+  background: darkgrey;
+}
 
-%theme-dark,
 .theme-dark {
-  background-color: $text-color;
-  color: $bg-color;
-
-  a {
-    color: invert($brand-color);
-  }
-
-  %button {
-    border-color: $button-color-border;
-    background-color: $button-color-bg;
-    color: $button-color-text;
-
-    @include on-event {
-      border-color: darken($button-color-bg, 20%);
-    }
-  }
-
-  %nav-bar {
-    background-color: $button-color-bg;
-  }
-
-  .img-zoomed-wrapper {
-    background: rgba(0,0,0,.5);
-  }
+  @extend %theme-dark;
 }

@@ -18,28 +18,27 @@
   // 'base/reset', // Replaced with vendor Normalize
   'base/base',
   'base/fonts',
-  'base/typography',
-  'base/helpers/index';
+  'base/typography';
   // 'base/animations';
 
 // 4. Layout-related sections
 @import
-  'layout/navigation',
-  // 'layout/grid',
+  'layout/grid',
   'layout/header',
+  'layout/navigation',
+  'layout/main',
+  'layout/section',
+  'layout/sidebar',
   'layout/footer';
-  // 'layout/sidebar';
   // 'layout/forms';
 
 // 5. Components
 @import
+  'components/anchor',
   'components/button',
   'components/image',
-  'components/grid',
   'components/article',
-  'components/pet',
-  'components/code',
-  'components/section';
+  'components/code';
   // 'components/caroussel';
   // 'components/cover';
   // 'components/dropdown';

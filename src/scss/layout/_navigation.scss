@@ -1,47 +1,24 @@
-%nav-bar--link {
-  @extend %button;
-}
+%nav-link {
+  text-decoration: none;
 
-%nav-bar {
-  overflow: auto;
-  max-width: 100%;
-
-  ul {
-    @extend %list-reset;
+  &-list {
     @extend %flex-row;
   }
 
-  a {
-    text-decoration: none;
-  }
-
-  li {
-    @extend %nav-bar--link;
-  }
+  // &-list-item {
+  // }
 }
 
 // // // // //
 
-.nav-bar {
-  @extend %nav-bar;
+.nav-link {
+  @extend %nav-link;
 
-  &--link {
-    @extend %nav-bar--link;
-  }
+  &-list {
+    @extend %nav-link-list;
 
-  &--inner {
-    @extend %flex-row;
-  }
-
-  &--main {
-    @extend %nav-bar;
-    justify-content: space-between;
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: z(navbar);
-    border-bottom: 1px solid transparent;
-    background: rgba($mid-grey, .5);
+    // &-item {
+    //   @extend %nav-link-list-item;
+    // }
   }
 }
